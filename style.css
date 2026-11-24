@@ -1,0 +1,251 @@
+:root {
+    --red: #d71920;
+    --dark-red: #a90f17;
+    --black: #101010;
+    --dark: #181818;
+    --white: #ffffff;
+    --grey: #a5a5a5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--black);
+    color: var(--white);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+/* HEADER */
+
+header {
+    background: rgba(16, 16, 16, 0.97);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .container {
+    min-height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.logo {
+    color: var(--white);
+    font-size: 25px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--red);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--red);
+}
+
+/* HERO */
+
+.hero {
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            ellipse at 85% 50%,
+            rgba(215, 25, 32, 0.35),
+            transparent 50%
+        ),
+        linear-gradient(
+            110deg,
+            #101010 15%,
+            #1b1b1b 65%,
+            #350d10 100%
+        );
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    right: -100px;
+    top: -100px;
+    width: 500px;
+    height: 800px;
+    border: 2px solid rgba(215,25,32,0.15);
+    transform: rotate(25deg);
+}
+
+.hero-content {
+    width: 90%;
+    max-width: 1250px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    padding: 100px 0;
+}
+
+.eyebrow {
+    color: var(--red);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    margin-bottom: 22px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 6vw, 82px);
+    line-height: 1.05;
+    font-weight: 900;
+    letter-spacing: -2px;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: var(--red);
+}
+
+.hero-content > p:not(.eyebrow) {
+    color: #c4c4c4;
+    font-size: 17px;
+    max-width: 480px;
+    margin-bottom: 35px;
+}
+
+.hero-button {
+    display: inline-block;
+    background: var(--red);
+    color: var(--white);
+    padding: 16px 28px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.hero-button:hover {
+    background: var(--white);
+    color: var(--black);
+}
+
+/* SECTIONS */
+
+.section {
+    padding: 100px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.section h2 {
+    font-size: clamp(28px, 4vw, 45px);
+    font-weight: 900;
+    margin-bottom: 18px;
+    letter-spacing: -1px;
+}
+
+.section .container > p:last-child {
+    color: var(--grey);
+    max-width: 650px;
+    font-size: 16px;
+}
+
+#news,
+#sponsor {
+    background: #171717;
+}
+
+/* FOOTER */
+
+footer {
+    background: #090909;
+    padding: 35px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+footer p {
+    color: #888;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px 0;
+        gap: 18px;
+    }
+
+    nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 10px;
+    }
+
+    .hero {
+        min-height: 550px;
+    }
+
+    .hero-content {
+        padding: 80px 0;
+    }
+
+    .hero h1 {
+        letter-spacing: -1px;
+    }
+
+    .section {
+        padding: 70px 0;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
